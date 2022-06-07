@@ -74,7 +74,7 @@ async function deleteReleases() {
       method: "GET",
     });
     releaseIds = (data || [])
-      .filter(({ tag_name, draft }) => tag_name === tagName && draft === false)
+      .filter(({ tag_name, draft }) => tag_name === tagName)
       .map(({ id }) => id);
   } catch (error) {
     console.error(`🌶  failed to get list of releases <- ${error.message}`);
